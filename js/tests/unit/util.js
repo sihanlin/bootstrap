@@ -4,13 +4,19 @@ $(function () {
   QUnit.module('util')
 
   QUnit.test('Util.getSelectorFromElement should return the correct element', function (assert) {
-    assert.expect(2)
+    assert.expect(3)
+
     var $el = $('<div data-target="body"></div>').appendTo($('#qunit-fixture'))
     assert.strictEqual(Util.getSelectorFromElement($el[0]), 'body')
 
     // not found element
     var $el2 = $('<div data-target="#fakeDiv"></div>').appendTo($('#qunit-fixture'))
     assert.strictEqual(Util.getSelectorFromElement($el2[0]), null)
+
+    // should escape ID and found the correct element
+    var $el3 = $('<div data-target="#collapse:Example"></div>').appendTo($('#qunit-fixture'))
+    $('<div id="collapse:Example"></div>').appendTo($('#qunit-fixture'))
+    assert.strictEqual(Util.getSelectorFromElement($el3[0]), '#collapse\\:Example')
   })
 
   QUnit.test('Util.typeCheckConfig should thrown an error when a bad config is passed', function (assert) {

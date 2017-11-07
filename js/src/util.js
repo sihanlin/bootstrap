@@ -87,6 +87,10 @@ const Util = (($) => {
     }
   }
 
+  // Thanks to learn.jquery.com see : http://bit.ly/1Tyr4SZ
+  function escapeId(selector) {
+    return selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1')
+  }
 
   /**
    * --------------------------------------------------------------------------
@@ -110,6 +114,11 @@ const Util = (($) => {
       let selector = element.getAttribute('data-target')
       if (!selector || selector === '#') {
         selector = element.getAttribute('href') || ''
+      }
+
+      // if it's an ID
+      if (selector.charAt(0) === '#') {
+        selector = escapeId(selector)
       }
 
       try {
