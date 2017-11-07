@@ -83,7 +83,7 @@
     "@babel/cli": "7.0.0-beta.5",
     "@babel/preset-env": "7.0.0-beta.5",
     "autoprefixer": "^7.1.2",
-    "babel-eslint": "^8.0.0",
+    "babel-eslint": "^8.0.2",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
     "bundlesize": "^0.15.2",
     "clean-css-cli": "^4.1.6",
