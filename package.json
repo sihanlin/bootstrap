@@ -80,8 +80,9 @@
     "popper.js": "^1.12.6"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.5",
-    "@babel/preset-env": "7.0.0-beta.5",
+    "@babel/cli": "7.0.0-beta.31",
+    "@babel/core": "7.0.0-beta.31",
+    "@babel/preset-env": "7.0.0-beta.31",
     "autoprefixer": "^7.1.2",
     "babel-eslint": "^8.0.2",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
